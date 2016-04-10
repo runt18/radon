@@ -6,7 +6,7 @@ import subprocess
 
 deps = []
 undeps = []
-pyv = os.environ.get('TRAVIS_PYTHON_VERSION', '%s.%s' % sys.version_info[:2])
+pyv = os.environ.get('TRAVIS_PYTHON_VERSION', '{0!s}.{1!s}'.format(*sys.version_info[:2]))
 if pyv == '2.6':
     deps.extend(['unittest2', 'argparse', 'importlib', 'mock'])
 elif pyv == '3.2':
