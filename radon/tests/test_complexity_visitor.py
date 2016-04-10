@@ -233,7 +233,9 @@ if sys.version_info[:2] >= (2, 7):
 class TestBlocks(ParametrizedTestCase):
     '''Test blocks.'''
 
-    def setParameters(self, code, expected_complexity, kwargs={}):
+    def setParameters(self, code, expected_complexity, kwargs=None):
+        if kwargs is None:
+            kwargs = {}
         self.code = dedent(code)
         self.expected_complexity = expected_complexity
         self.kwargs = kwargs
