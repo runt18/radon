@@ -8,7 +8,9 @@ except ImportError:
     import mock
 
 
-def func(a, b=2, c=[], d=None):
+def func(a, b=2, c=None, d=None):
+    if c is None:
+        c = []
     pass
 
 
